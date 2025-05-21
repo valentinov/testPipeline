@@ -1,8 +1,12 @@
 name: Run Python Tests
 
 on:
-  push:        # Run this workflow on every push
-  pull_request: # run on PRs
+  push:
+    branches:
+      - main  # Runs on push to the main branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests targeting the main branch
 
 jobs:
   test:
@@ -15,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12.6'  # or your desired version
+        python-version: '3.12.6'
 
     - name: Install dependencies
       run: |
