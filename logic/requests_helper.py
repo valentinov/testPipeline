@@ -67,5 +67,6 @@ def make_request(
             logger.warning(f"Attempt {attempt} failed: {e}. Retrying in {wait}s...")
             time.sleep(wait)
 
-response = make_request("GET", "https://example.com/api")
-data = response.json()
+if __name__ == "__main__":
+    response = make_request("GET", "https://example.com/api")
+    print(response.json())
